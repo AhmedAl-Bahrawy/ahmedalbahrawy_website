@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="موقع أحمد البحراوي الشخصي - مطور ويب وألعاب، متخصص في Python وFlask وUnity.">
+    <meta property="og:title" content="أحمد البحراوي - مطور ويب وألعاب">
+    <meta property="og:description" content="موقع أحمد البحراوي الشخصي - مطور ويب وألعاب، متخصص في Python وFlask وUnity.">
+    <meta property="og:image" content="{{url_for('static', filename='images/profile.jpg')}}">
+    <meta property="og:url" content="https://yourwebsite.com">
     <title data-en="Ahmed Ayman Mohamed Rashad Albahrawy - Web and Game Developer" data-ar="أحمد أيمن محمد رشاد البحراوي - مطور ويب وألعاب">أحمد أيمن محمد رشاد البحراوي - مطور ويب وألعاب</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com;">
 </head>
 <body>
+    <div id="loading-spinner">جار التحميل...</div>
     <div id="particles-js"></div>
     <div class="content-wrapper">
         <header>
@@ -29,7 +37,6 @@
                     <span class="line"></span>
                     <span class="line"></span>
                 </div>
-                
             </nav>
         </header>
 
@@ -45,27 +52,22 @@
             <section id="about" class="section about">
                 <h2 data-en="About Me" data-ar="عني">عني</h2>
                 <div class="about-content">
-                    <img src="{{url_for('static', filename='images/profile.jpg')}}" alt="Ahmed Ayman Mohamed Rashad Albahrawy" class="profile-image">
+                    <img src="{{url_for('static', filename='images/profile.jpg')}}" alt="صورة أحمد البحراوي" class="profile-image" loading="lazy">
                     <div class="about-text">
                         <p data-en="A highly motivated backend web developer and game developer with a passion for learning. Specialized in Python and web development using Flask, with hands-on experience in creating dynamic websites and games." data-ar="مطور ويب خلفي ومطور ألعاب ذو دافعية عالية وشغف للتعلم. متخصص في Python وتطوير الويب باستخدام Flask، مع خبرة عملية في إنشاء مواقع ويب ديناميكية وألعاب.">مطور ويب خلفي ومطور ألعاب ذو دافعية عالية وشغف للتعلم. متخصص في Python وتطوير الويب باستخدام Flask، مع خبرة عملية في إنشاء مواقع ويب ديناميكية وألعاب.</p>
                         <ul class="personal-info">
                             <li><strong data-en="Date of Birth:" data-ar="تاريخ الميلاد:">تاريخ الميلاد:</strong> 10/2/2010</li>
                             <li><strong data-en="Location:" data-ar="الموقع:">الموقع:</strong> <span data-en="Kom El Nour, Mit Ghamr, Dakahlia" data-ar="كوم النور، ميت غمر، الدقهلية">كوم النور، ميت غمر، الدقهلية</span></li>
-                            <li><strong data-en="Phone:" data-ar="الهاتف:">الهاتف:</strong> +20 11 44682332</li>
+                            <li><strong data-en="Phone:" data-ar="الهاتف:">الهاتف:</strong>01144682332</li>
                             <li><strong data-en="Email:" data-ar="البريد الإلكتروني:">البريد الإلكتروني:</strong> ahmedalbahrawy-2010@hotmail.com</li>
                         </ul>
                     </div>
                     <div class="about-text">
                         <ul class="personal-info">
                             <strong data-ar="ملخص شخصي : " data-en="Personal Summary : ">ملخص شخصي : </strong>
-                            <li 
-                            data-en="A highly motivated and self-driven back-end developer with a strong background in game development and a passion for learning new technologies. Proficient in Python and web development using Flask, with hands-on experience in creating dynamic websites and games. Eager to apply my skills and contribute to innovative projects in a challenging environment. Always excited to learn new things, adaptable, and quick to learn. Also knowledgeable in UI/UX design principles." 
-                            data-ar="مطور خلفي متحمس للغاية وذاتي الدافع ويتمتع بخلفية قوية في تطوير الألعاب وشغف لتعلم التقنيات الجديدة. يبرع في لغة Python وتطوير الويب باستخدام Flask، مع خبرة عملية في إنشاء مواقع الويب والألعاب الديناميكية. حريص على تطبيق مهاراتي والمساهمة في المشاريع المبتكرة في بيئة مليئة بالتحديات. متحمس دائمًا لتعلم أشياء جديدة وقابل للتكيف وسريع التعلم. - على دراية أيضًا بمبدأ تصميم UI/UX">
-                            مطور خلفي متحمس للغاية وذاتي الدافع ويتمتع بخلفية قوية في تطوير الألعاب وشغف لتعلم التقنيات الجديدة. يبرع في لغة Python وتطوير الويب باستخدام Flask، مع خبرة عملية في إنشاء مواقع الويب والألعاب الديناميكية. حريص على تطبيق مهاراتي والمساهمة في المشاريع المبتكرة في بيئة مليئة بالتحديات. متحمس دائمًا لتعلم أشياء جديدة وقابل للتكيف وسريع التعلم. - على دراية أيضًا بمبدأ تصميم UI/UX</li>
+                            <li data-en="A highly motivated and self-driven back-end developer with a strong background in game development and a passion for learning new technologies. Proficient in Python and web development using Flask, with hands-on experience in creating dynamic websites and games. Eager to apply my skills and contribute to innovative projects in a challenging environment. Always excited to learn new things, adaptable, and quick to learn. Also knowledgeable in UI/UX design principles." data-ar="مطور خلفي متحمس للغاية وذاتي الدافع ويتمتع بخلفية قوية في تطوير الألعاب وشغف لتعلم التقنيات الجديدة. يبرع في لغة Python وتطوير الويب باستخدام Flask، مع خبرة عملية في إنشاء مواقع الويب والألعاب الديناميكية. حريص على تطبيق مهاراتي والمساهمة في المشاريع المبتكرة في بيئة مليئة بالتحديات. متحمس دائمًا لتعلم أشياء جديدة وقابل للتكيف وسريع التعلم. - على دراية أيضًا بمبدأ تصميم UI/UX">مطور خلفي متحمس للغاية وذاتي الدافع ويتمتع بخلفية قوية في تطوير الألعاب وشغف لتعلم التقنيات الجديدة. يبرع في لغة Python وتطوير الويب باستخدام Flask، مع خبرة عملية في إنشاء مواقع الويب والألعاب الديناميكية. حريص على تطبيق مهاراتي والمساهمة في المشاريع المبتكرة في بيئة مليئة بالتحديات. متحمس دائمًا لتعلم أشياء جديدة وقابل للتكيف وسريع التعلم. - على دراية أيضًا بمبدأ تصميم UI/UX</li>
                         </ul>
                     </div>
-                    
-
                 </div>
             </section>
 
@@ -75,28 +77,26 @@
                     <div class="project-card">
                         <h3>Ettasel Nasel</h3>
                         <p data-en="A website developed using Flask" data-ar="موقع ويب تم تطويره باستخدام Flask">موقع ويب تم تطويره باستخدام Flask</p>
-                        <img src="{{url_for('static', filename='images/ettasel-nasel.jpg')}}" alt="Ettasel Nasel Website">
+                        <img src="{{url_for('static', filename='images/ettasel-nasel.jpg')}}" alt="Ettasel Nasel Website" loading="lazy">
                         <a href="https://ettaselnasel.pythonanywhere.com/home/" class="project-link" data-en="View Project" data-ar="عرض المشروع">عرض المشروع</a>
                     </div>
                     <div class="project-card">
                         <h3>Shoot Gun</h3>
                         <p data-en="A game developed using Unity Engine" data-ar="لعبة تم تطويرها باستخدام محرك Unity">لعبة تم تطويرها باستخدام محرك Unity</p>
-                        <img src="{{url_for('static', filename='images/shoot-gun.jpg')}}" alt="Shoot Gun Game">
+                        <img src="{{url_for('static', filename='images/shoot-gun.jpg')}}" alt="Shoot Gun Game" loading="lazy">
                         <a href="https://devahmedalbhrawy.itch.io/shoot-gun-3" class="project-link" data-en="View Project" data-ar="عرض المشروع">عرض المشروع</a>
                     </div>
                     <div class="project-card">
                         <h3>Kill Enemy FPS</h3>
                         <p data-en="An FPS game developed using Unity Engine" data-ar="لعبة FPS تم تطويرها باستخدام محرك Unity">لعبة FPS تم تطويرها باستخدام محرك Unity</p>
-                        <img src="{{url_for('static', filename='images/kill-enemy-fps.jpg')}}" alt="Kill Enemy FPS Game">
+                        <img src="{{url_for('static', filename='images/kill-enemy-fps.jpg')}}" alt="Kill Enemy FPS Game" loading="lazy">
                         <a href="https://devahmedalbhrawy.itch.io/kill-enemy-fps" class="project-link" data-en="View Project" data-ar="عرض المشروع">عرض المشروع</a>
                     </div>
                     <div class="project-card">
                         <h3>Center Al-Resala</h3>
-                        <p data-en="A website developed using Flask" data-ar="موقع ويب تم تطويره باستخدام Flask">موقع ويب تم تطويره باستخدام
-                            Flask</p>
-                        <img src="{{url_for('static', filename='images/centeral-resala.png')}}" alt="Ettasel Nasel Website">
-                        <a href="https://centeralresala.pythonanywhere.com/" class="project-link" data-en="View Project"
-                            data-ar="عرض المشروع">عرض المشروع</a>
+                        <p data-en="A website developed using Flask" data-ar="موقع ويب تم تطويره باستخدام Flask">موقع ويب تم تطويره باستخدام Flask</p>
+                        <img src="{{url_for('static', filename='images/centeral-resala.png')}}" alt="Ettasel Nasel Website" loading="lazy">
+                        <a href="https://centeralresala.pythonanywhere.com/" class="project-link" data-en="View Project" data-ar="عرض المشروع">عرض المشروع</a>
                     </div>
                 </div>
             </section>
@@ -144,7 +144,7 @@
                 <h2 data-en="Contact Me" data-ar="اتصل بي">اتصل بي</h2>
                 <form class="contact-form">
                     <input type="text" name="name" placeholder="الاسم" data-en="Name" data-ar="الاسم" required>
-                    <input type="email" name="email" placeholder="البريد الإلكتروني" data-en="Email" data-ar="البريد الإلكتروني" required>
+                    <input type="email" name="email" placeholder="البريد الإلكتروني" data-en="Email" data-ar="البريد الإلكتروني" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
                     <textarea name="message" placeholder="رسالتك" data-en="Your Message" data-ar="رسالتك" required></textarea>
                     <button type="submit" class="submit-button" data-en="Send" data-ar="إرسال">إرسال</button>
                 </form>
@@ -163,8 +163,5 @@
     </div>
 
     <script src="{{url_for('static', filename='js/main.js')}}"></script>
-    <script>
-
-    </script>
 </body>
 </html>

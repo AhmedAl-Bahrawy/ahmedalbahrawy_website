@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // إخفاء مؤشر التحميل بعد تحميل الصفحة
+    window.addEventListener('load', () => {
+        document.getElementById('loading-spinner').style.display = 'none';
+    });
+
     // تهيئة ScrollReveal
     ScrollReveal().reveal('.section', {
         delay: 200,
@@ -31,27 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
             domEl.classList.add('show');
         }
     });
-
-    ScrollReveal().reveal('.section', { 
-        distance: '50px',
-        duration: 1000,
-        easing: 'ease-in-out',
-        origin: 'bottom',
-        interval: 200
-    });
-    ScrollReveal().reveal('.section', {
-        delay: 200,
-        distance: '50px',
-        duration: 1000,
-        easing: 'cubic-bezier(0.5, 0, 0, 1)',
-        origin: 'bottom',
-        interval: 200, // دمج الخصائص من التعريف الثاني
-        opacity: 0,
-        afterReveal: function (domEl) {
-            domEl.classList.add('show');
-        }
-    });
-    
 
     // تهيئة Particles.js
     particlesJS("particles-js", {
@@ -169,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
-    
 
     // إضافة تأثير العد التصاعدي لأرقام المهارات
     const skillNumbers = document.querySelectorAll('.skill-card .skill-number');
@@ -273,97 +256,78 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    
     const languageSelect = document.getElementById('language-select');
     const htmlTag = document.documentElement;
-    const heroTitle = document.querySelector('.hero h1'); // العنصر heroTitle
+    const heroTitle = document.querySelector('.hero h1');
 
-    let timeoutId = null; // المتغير الذي سيخزن الـ timeoutId للأنميشن الحالية
+    let timeoutId = null;
 
-    // دالة الأنميشن لكتابة النص حرفًا بحرف
     function updateTextWithAnimation(text) {
-        if (!heroTitle) return; // التأكد من وجود العنصر
-        if (timeoutId) clearTimeout(timeoutId); // إيقاف الأنميشن السابقة إذا كانت تعمل
-        heroTitle.textContent = ''; // تصفير النص لبدء الأنميشن من البداية
-        let i = 0; // المتغير للتحكم بحروف النص
+        if (!heroTitle) return;
+        if (timeoutId) clearTimeout(timeoutId);
+        heroTitle.textContent = '';
+        let i = 0;
         const typeWriter = () => {
             if (i < text.length) {
-                heroTitle.textContent += text.charAt(i); // إضافة حرف جديد
+                heroTitle.textContent += text.charAt(i);
                 i++;
-                timeoutId = setTimeout(typeWriter, 100); // الانتظار قبل إضافة الحرف التالي (يمكن تعديل السرعة)
+                timeoutId = setTimeout(typeWriter, 100);
             }
         };
         typeWriter();
     }
 
-    // دالة تغيير اللغة
     function changeLanguage(lang) {
-        htmlTag.setAttribute('lang', lang); // تعيين خاصية اللغة على الـ HTML
-        htmlTag.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr'); // تعيين اتجاه الكتابة
+        htmlTag.setAttribute('lang', lang);
+        htmlTag.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
-        // البحث عن عناصر الـ navbar
         const nav = document.querySelector('.navbar');
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
         const languageSelect = document.getElementById('language-select');
 
-        // إعادة ترتيب العناصر بناءً على اللغة
         if (lang === 'ar') {
-            // اللغة العربية: قائمة الروابط أولاً ثم القائمة المنسدلة
             if (nav && hamburger && navLinks && languageSelect) {
-                nav.innerHTML = ''; // تفريغ محتوى الـ nav
+                nav.innerHTML = '';
                 nav.appendChild(hamburger);
                 nav.appendChild(navLinks);
                 nav.appendChild(languageSelect);
             }
         } else {
-            // اللغة الإنجليزية: القائمة المنسدلة أولاً ثم قائمة الروابط
             if (nav && hamburger && navLinks && languageSelect) {
-                nav.innerHTML = ''; // تفريغ محتوى الـ nav
+                nav.innerHTML = '';
                 nav.appendChild(languageSelect);
                 nav.appendChild(navLinks);
                 nav.appendChild(hamburger);
             }
         }
 
-        // البحث عن العناصر التي تحتوي على بيانات النص المترجم
         document.querySelectorAll('[data-' + lang + ']').forEach(elem => {
-            const newText = elem.getAttribute('data-' + lang); // الحصول على النص المناسب للغة المختارة
-            
-            // تحديث النصوص للعناصر التي ليست input أو textarea
+            const newText = elem.getAttribute('data-' + lang);
             if (elem.tagName !== 'INPUT' && elem.tagName !== 'TEXTAREA') {
                 if (elem === heroTitle) {
-                    // تطبيق الأنميشن للـ heroTitle
-                    updateTextWithAnimation(newText); 
+                    updateTextWithAnimation(newText);
                 } else {
-                    elem.textContent = newText; // تغيير النص لباقي العناصر
+                    elem.textContent = newText;
                 }
             } else {
-                // تحديث الـ placeholder للعناصر من نوع input و textarea
-                elem.placeholder = newText; 
+                elem.placeholder = newText;
             }
         });
     }
 
-    // مستمع للغة المختارة من المستخدم
     languageSelect.addEventListener('change', (event) => {
         const selectedLang = event.target.value;
         changeLanguage(selectedLang);
-        
-        // تحديث عنوان URL مع اللغة الجديدة بدون إعادة تحميل الصفحة
         const url = new URL(window.location);
         url.searchParams.set('lang', selectedLang);
-        window.history.pushState({}, '', url); // تحديث العنوان فقط بدون refresh
+        window.history.pushState({}, '', url);
     });
 
-    // تحميل اللغة عند بداية الصفحة
     window.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
-        const lang = urlParams.get('lang') || 'ar'; // القيمة الافتراضية هي العربية
-        languageSelect.value = lang; // تعيين القيمة في dropdown
-
-        // تحديث النصوص وبنية الـ navbar بناءً على اللغة
+        const lang = urlParams.get('lang') || 'ar';
+        languageSelect.value = lang;
         changeLanguage(lang);
     });
-    
 });
