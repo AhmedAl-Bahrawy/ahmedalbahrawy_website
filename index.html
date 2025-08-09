@@ -20,6 +20,7 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -35,9 +36,8 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="profile-image">
-                <div class="profile-placeholder">
-                    <i class="fas fa-user"></i>
-                </div>
+                <img src="static/images/profile.jpg" alt="Ahmed Al-Bahrawy profile photo" class="profile-photo" loading="eager">
+                <i class="fas fa-bolt overlay-icon" aria-hidden="true"></i>
             </div>
             <h1>Ahmed "Thunder" Al-Bahrawy</h1>
             <h2>Full-Stack Developer & Backend Specialist</h2>
@@ -57,89 +57,92 @@
 
     <!-- About Section -->
     <section id="about" class="section">
-        <h2 class="section-title fade-in">About Thunder</h2>
-        <div class="about-content">
-            <div class="about-image slide-in-left">
-                <div class="profile-large">
-                    <div class="profile-placeholder">
-                        <i class="fas fa-bolt"></i>
+        <div class="section-content">
+            <h2 class="section-title fade-in">About Thunder</h2>
+            <div class="about-content">
+                <div class="about-image slide-in-left">
+                    <div class="profile-large">
+                        <img src="static/images/profile.jpg" alt="Ahmed Al-Bahrawy profile photo" class="profile-photo" loading="lazy">
+                        <i class="fas fa-bolt overlay-icon" aria-hidden="true"></i>
                     </div>
                 </div>
+                <div class="about-text slide-in-right">
+                    <h3>15 Years Old | Egyptian Developer from Dakahlia</h3>
+                    <p>Hello World! My name is Ahmed Al-Bahrawy, but you can call me "Thunder". I started my coding journey at the age of 12, initially learning game development with Unity Engine. Since then, I've evolved into a full-stack developer with a passion for backend systems.</p>
+                    <p>I'm mostly self-taught, with additional training from Digital Cubs of Egypt Initiative, ITI (Information Technology Institute), and NTI (National Telecommunication Institute). I love logical thinking and calculations, which is why I prefer backend development over frontend.</p>
+                    <p>When I'm not coding, I enjoy playing chess, reading Arabic and translated novels, and working on my language skills. My English is good, and I aspire to master German alongside my native Arabic.</p>
+                </div>
             </div>
-            <div class="about-text slide-in-right">
-                <h3>15 Years Old | Egyptian Developer from Dakahlia</h3>
-                <p>Hello World! My name is Ahmed Al-Bahrawy, but you can call me "Thunder". I started my coding journey at the age of 12, initially learning game development with Unity Engine. Since then, I've evolved into a full-stack developer with a passion for backend systems.</p>
-                <p>I'm mostly self-taught, with additional training from Digital Cubs of Egypt Initiative, ITI (Information Technology Institute), and NTI (National Telecommunication Institute). I love logical thinking and calculations, which is why I prefer backend development over frontend.</p>
-                <p>When I'm not coding, I enjoy playing chess, reading Arabic and translated novels, and working on my language skills. My English is good, and I aspire to master German alongside my native Arabic.</p>
-            </div>
-        </div>
-        <div class="stats-grid fade-in">
-            <div class="stat-card">
-                <div class="stat-number">3+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">8</div>
-                <div class="stat-label">Team Presentations</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">7</div>
-                <div class="stat-label">Best Team Awards</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">Projects Completed</div>
+            <div class="stats-grid fade-in">
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Team Presentations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Best Team Awards</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="section">
-        <h2 class="section-title fade-in">My Arsenal</h2>
-        <div class="skills-grid">
-            <div class="skill-category scale-in">
-                <h3><i class="fas fa-server"></i>Backend Development (My Superpower)</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Flask</span>
-                    <span class="skill-tag">SQLAlchemy</span>
-                    <span class="skill-tag">REST APIs</span>
-                    <span class="skill-tag">Database Design</span>
+        <div class="section-content">
+            <h2 class="section-title fade-in">My Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-category scale-in">
+                    <h3><i class="fas fa-server"></i>Backend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">SQLAlchemy</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Database Design</span>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-category scale-in">
-                <h3><i class="fas fa-palette"></i>Frontend Development (Pretty Good!)</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Responsive Design</span>
+                <div class="skill-category scale-in">
+                    <h3><i class="fas fa-palette"></i>Frontend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Responsive Design</span>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-category scale-in">
-                <h3><i class="fas fa-database"></i>Database Management</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">Database Optimization</span>
-                    <span class="skill-tag">Data Modeling</span>
+                <div class="skill-category scale-in">
+                    <h3><i class="fas fa-database"></i>Database Management</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Database Optimization</span>
+                        <span class="skill-tag">Data Modeling</span>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-category scale-in">
-                <h3><i class="fas fa-gamepad"></i>Game Development</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Unity Engine</span>
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">Game Logic</span>
+                <div class="skill-category scale-in">
+                    <h3><i class="fas fa-gamepad"></i>Game Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Unity Engine</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Game Logic</span>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-category scale-in">
-                <h3><i class="fas fa-tools"></i>Other Skills</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">UI/UX Design (Basic)</span>
-                    <span class="skill-tag">Problem Solving</span>
-                    <span class="skill-tag">Creative Thinking</span>
-                    <span class="skill-tag">Team Leadership</span>
+                <div class="skill-category scale-in">
+                    <h3><i class="fas fa-tools"></i>Other Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Creative Thinking</span>
+                        <span class="skill-tag">Team Leadership</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -147,142 +150,292 @@
 
     <!-- Projects Section -->
     <section id="projects" class="section">
-        <h2 class="section-title fade-in">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card fade-in">
-                <div class="project-image">
-                    <i class="fas fa-crosshairs"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Kill Enemy FPS</h3>
-                    <p>An immersive FPS game developed using Unity Engine with advanced enemy AI, weapon systems, and dynamic environments.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Unity</span>
-                        <span class="tech-tag">C#</span>
-                        <span class="tech-tag">Game AI</span>
+        <div class="section-content">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-crosshairs"></i>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Project
-                        </a>
+                    <div class="project-info">
+                        <h3>Kill Enemy FPS</h3>
+                        <p>An immersive FPS game developed using Unity Engine with advanced enemy AI, weapon systems, and dynamic environments.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Game AI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Shoot Gun</h3>
+                        <p>Action-packed shooting game with realistic physics, multiple weapon types, and challenging gameplay mechanics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">Physics</span>
+                            <span class="tech-tag">Animation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Ettasel Nasel</h3>
+                        <p>Modern web application built with Flask featuring user authentication, real-time communication, and responsive design.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQLAlchemy</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Appie Work Shop</h3>
+                        <p>Responsive web application designed for workshop management with modern UI/UX and smooth animations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Center Al-Resala</h3>
+                        <p>Comprehensive web platform for educational center management built with Flask and modern backend architecture.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Admin Panel</span>
+                            <span class="tech-tag">CRUD</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Thunder Portfolio</h3>
+                        <p>This very website! A futuristic portfolio built with modern web technologies and smooth animations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Animations</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Source Code
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="project-card fade-in">
-                <div class="project-image">
-                    <i class="fas fa-bullseye"></i>
+    <!-- Reviews Section -->
+    <section id="reviews" class="section">
+        <div class="section-content">
+            <h2 class="section-title fade-in">Client Reviews & Feedback</h2>
+            
+            <!-- Rating Summary -->
+            <div class="rating-summary fade-in">
+                <div class="rating-number">4.9</div>
+                <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>
-                <div class="project-info">
-                    <h3>Shoot Gun</h3>
-                    <p>Action-packed shooting game with realistic physics, multiple weapon types, and challenging gameplay mechanics.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Unity</span>
-                        <span class="tech-tag">Physics</span>
-                        <span class="tech-tag">Animation</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Project
-                        </a>
-                    </div>
-                </div>
+                <div class="rating-text">Based on 12+ client reviews</div>
             </div>
 
-            <div class="project-card fade-in">
-                <div class="project-image">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Ettasel Nasel</h3>
-                    <p>Modern web application built with Flask featuring user authentication, real-time communication, and responsive design.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">SQLAlchemy</span>
-                        <span class="tech-tag">JavaScript</span>
+            <div class="reviews-grid">
+                <div class="review-card fade-in">
+                    <div class="review-date">Dec 2024</div>
+                    <div class="review-header">
+                        <div class="review-avatar">M</div>
+                        <div class="review-info">
+                            <h4>Mohamed Hassan</h4>
+                            <div class="review-role">Business Owner</div>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            Live Demo
-                        </a>
-                        <a href="#" class="project-link">
-                            <i class="fab fa-github"></i>
-                            Code
-                        </a>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        "Thunder delivered an exceptional web application for our business. His backend skills are truly impressive for someone his age. The project was completed on time and exceeded our expectations. Highly recommended!"
                     </div>
                 </div>
-            </div>
 
-            <div class="project-card fade-in">
-                <div class="project-image">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Appie Work Shop</h3>
-                    <p>Responsive web application designed for workshop management with modern UI/UX and smooth animations.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Responsive</span>
+                <div class="review-card fade-in">
+                    <div class="review-date">Nov 2024</div>
+                    <div class="review-header">
+                        <div class="review-avatar">S</div>
+                        <div class="review-info">
+                            <h4>Sarah Ahmed</h4>
+                            <div class="review-role">Startup Founder</div>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Project
-                        </a>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        "Working with Ahmed was a pleasure. He's not only technically skilled but also great at communication. His Flask-based solution solved all our database challenges. Will definitely work with him again!"
                     </div>
                 </div>
-            </div>
 
-            <div class="project-card fade-in">
-                <div class="project-image">
-                    <i class="fas fa-tree"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Center Al-Resala</h3>
-                    <p>Comprehensive web platform for educational center management built with Flask and modern backend architecture.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flask</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Admin Panel</span>
-                        <span class="tech-tag">CRUD</span>
+                <div class="review-card fade-in">
+                    <div class="review-date">Oct 2024</div>
+                    <div class="review-header">
+                        <div class="review-avatar">K</div>
+                        <div class="review-info">
+                            <h4>Khaled Mahmoud</h4>
+                            <div class="review-role">Team Lead</div>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            Live Demo
-                        </a>
-                        <a href="#" class="project-link">
-                            <i class="fab fa-github"></i>
-                            Code
-                        </a>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        "Thunder's work on our team project was outstanding. He led the backend development with confidence and skill. His problem-solving abilities and attention to detail are remarkable. A true professional!"
                     </div>
                 </div>
-            </div>
 
-            <div class="project-card fade-in">
-                <div class="project-image">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Thunder Portfolio</h3>
-                    <p>This very website! A futuristic portfolio built with modern web technologies and smooth animations.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Animations</span>
+                <div class="review-card fade-in">
+                    <div class="review-date">Sep 2024</div>
+                    <div class="review-header">
+                        <div class="review-avatar">A</div>
+                        <div class="review-info">
+                            <h4>Amira Elsayed</h4>
+                            <div class="review-role">E-commerce Manager</div>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fab fa-github"></i>
-                            Source Code
-                        </a>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        "Ahmed built a fantastic inventory management system for our online store. The database design is efficient and the API integration works flawlessly. Great value for money!"
+                    </div>
+                </div>
+
+                <div class="review-card fade-in">
+                    <div class="review-date">Aug 2024</div>
+                    <div class="review-header">
+                        <div class="review-avatar">O</div>
+                        <div class="review-info">
+                            <h4>Omar Youssef</h4>
+                            <div class="review-role">Game Developer</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        "Collaborated with Thunder on a Unity game project. His understanding of game mechanics and C# programming is excellent. He's reliable, creative, and delivers quality work consistently."
+                    </div>
+                </div>
+
+                <div class="review-card fade-in">
+                    <div class="review-date">Jul 2024</div>
+                    <div class="review-header">
+                        <div class="review-avatar">N</div>
+                        <div class="review-info">
+                            <h4>Nour Farouk</h4>
+                            <div class="review-role">Digital Agency Owner</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        "Thunder developed multiple client websites for our agency. His responsive designs and clean code impressed both us and our clients. Fast delivery and excellent communication throughout the process."
                     </div>
                 </div>
             </div>
@@ -291,64 +444,65 @@
 
     <!-- Services Section -->
     <section id="services" class="section">
-        <h2 class="section-title fade-in">Services I Offer</h2>
-        <div class="services-grid">
-            <div class="service-card scale-in">
-                <div class="service-icon">
-                    <i class="fas fa-server"></i>
+        <div class="section-content">
+            <h2 class="section-title fade-in">Services I Offer</h2>
+            <div class="services-grid">
+                <div class="service-card scale-in">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <p>Robust server-side applications with Flask, Python, and database integration. API development and system architecture.</p>
+                    <div class="service-price">Starting from $500</div>
                 </div>
-                <h3>Backend Development</h3>
-                <p>Robust server-side applications with Flask, Python, and database integration. API development and system architecture.</p>
-                <div class="service-price">Starting from $500</div>
-            </div>
 
-            <div class="service-card scale-in">
-                <div class="service-icon">
-                    <i class="fas fa-laptop-code"></i>
+                <div class="service-card scale-in">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Full-Stack Web Development</h3>
+                    <p>Complete web applications from frontend to backend, responsive design, and modern user experiences.</p>
+                    <div class="service-price">Starting from $800</div>
                 </div>
-                <h3>Full-Stack Web Development</h3>
-                <p>Complete web applications from frontend to backend, responsive design, and modern user experiences.</p>
-                <div class="service-price">Starting from $800</div>
-            </div>
 
-            <div class="service-card scale-in">
-                <div class="service-icon">
-                    <i class="fas fa-database"></i>
+                <div class="service-card scale-in">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database Design & Optimization</h3>
+                    <p>Efficient database structures, query optimization, and data modeling for scalable applications.</p>
+                    <div class="service-price">Starting from $300</div>
                 </div>
-                <h3>Database Design & Optimization</h3>
-                <p>Efficient database structures, query optimization, and data modeling for scalable applications.</p>
-                <div class="service-price">Starting from $300</div>
-            </div>
 
-            <div class="service-card scale-in">
-                <div class="service-icon">
-                    <i class="fas fa-gamepad"></i>
+                <div class="service-card scale-in">
+                    <div class="service-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Game Development</h3>
+                    <p>Unity-based game development with engaging gameplay mechanics and polished user experiences.</p>
+                    <div class="service-price">Starting from $1000</div>
                 </div>
-                <h3>Game Development</h3>
-                <p>Unity-based game development with engaging gameplay mechanics and polished user experiences.</p>
-                <div class="service-price">Starting from $1000</div>
-            </div>
 
-            <div class="service-card scale-in">
-                <div class="service-icon">
-                    <i class="fas fa-mobile-alt"></i>
+                <div class="service-card scale-in">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Web Design</h3>
+                    <p>Mobile-first, responsive websites that look great on all devices with smooth animations and modern design.</p>
+                    <div class="service-price">Starting from $400</div>
                 </div>
-                <h3>Responsive Web Design</h3>
-                <p>Mobile-first, responsive websites that look great on all devices with smooth animations and modern design.</p>
-                <div class="service-price">Starting from $400</div>
-            </div>
 
-            <div class="service-card scale-in">
-                <div class="service-icon">
-                    <i class="fas fa-cogs"></i>
+                <div class="service-card scale-in">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>API Development</h3>
+                    <p>RESTful APIs, third-party integrations, and microservices architecture for scalable web applications.</p>
+                    <div class="service-price">Starting from $600</div>
                 </div>
-                <h3>API Development</h3>
-                <p>RESTful APIs, third-party integrations, and microservices architecture for scalable web applications.</p>
-                <div class="service-price">Starting from $600</div>
             </div>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact" class="section">
         <h2 class="section-title fade-in">Let's Connect</h2>
