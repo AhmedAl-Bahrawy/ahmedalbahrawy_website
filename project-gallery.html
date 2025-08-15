@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Gallery - Ahmed Al-Bahrawy</title>
+    <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/gallery.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">⚡ Thunder</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#projects" class="nav-link active">Projects</a></li>
+                <li><a href="index.html#reviews" class="nav-link">Reviews</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="gallery" class="section gallery-section">
+        <div class="section-content">
+            <h2 class="section-title fade-in" id="project-title">Project Gallery</h2>
+            <div class="gallery-container fade-in">
+                <div class="gallery-card">
+                    <div class="gallery-image-wrapper">
+                        <!-- Images will be loaded here by JavaScript -->
+                    </div>
+                    <button class="gallery-nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gallery-nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Ahmed "Thunder" Al-Bahrawy. All rights reserved.</p>
+            <p>"Stay loud, even in silence — that's the Thunder way."</p>
+            <p>Made with ❤️ by Ahmed Al-Bahrawy</p>
+        </div>
+    </footer>
+
+    <script src="static/js/gallery.js"></script>
+</body>
+</html>

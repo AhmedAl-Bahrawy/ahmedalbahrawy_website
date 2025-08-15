@@ -1,0 +1,13 @@
+{
+    "confidential-client": {
+        "name": "Confidential Client Project",
+        "image_folder": "static/images/projects/confidential-client/",
+        "images": [
+            "appie-work-shop.png",
+            "centeral-resala.png",
+            "ettasel-nasel.jpg",
+            "kill-enemy-fps.jpg",
+            "shoot-gun.jpg"
+        ]
+    }
+}
