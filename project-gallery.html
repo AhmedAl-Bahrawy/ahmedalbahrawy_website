@@ -14,15 +14,9 @@
 
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">⚡ Thunder</div>
+            <div class="logo" id="logo">⚡ Thunder</div>
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html#home" class="nav-link">Home</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
-                <li><a href="index.html#projects" class="nav-link active">Projects</a></li>
-                <li><a href="index.html#reviews" class="nav-link">Reviews</a></li>
-                <li><a href="index.html#services" class="nav-link">Services</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <!-- Navigation will be rendered by JavaScript -->
             </ul>
             <div class="mobile-menu" id="mobile-menu">
                 <span></span>
@@ -47,14 +41,74 @@
         </div>
     </section>
 
+    <!-- Fullscreen Modal -->
+    <div class="fullscreen-modal" id="fullscreen-modal">
+        <button class="fullscreen-close" id="fullscreen-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <img class="fullscreen-image" id="fullscreen-image" alt="Fullscreen image">
+        <button class="fullscreen-nav fullscreen-prev" id="fullscreen-prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="fullscreen-nav fullscreen-next" id="fullscreen-next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="fullscreen-counter" id="fullscreen-counter">
+            Image 1 of 1
+        </div>
+    </div>
+
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Ahmed "Thunder" Al-Bahrawy. All rights reserved.</p>
-            <p>"Stay loud, even in silence — that's the Thunder way."</p>
-            <p>Made with ❤️ by Ahmed Al-Bahrawy</p>
+        <div class="footer-content" id="footer-content">
+            <!-- Footer content will be rendered by JavaScript -->
         </div>
     </footer>
 
+    <!-- Include the website data management script -->
+    <script src="static/js/website-data.js"></script>
     <script src="static/js/gallery.js"></script>
+    
+    <script>
+        // Wait for website data to load
+        document.addEventListener('websiteDataLoaded', () => {
+            // Update site information
+            const siteInfo = websiteData.getSiteInfo();
+            if (siteInfo) {
+                document.title = `Project Gallery - ${siteInfo.logo}`;
+                document.getElementById('logo').textContent = siteInfo.logo;
+            }
+
+            // Render navigation
+            const navigationContainer = document.getElementById('nav-links');
+            if (navigationContainer) {
+                const navigation = websiteData.getNavigation();
+                if (navigation) {
+                    navigationContainer.innerHTML = navigation.map((nav, index) => `
+                        <li><a href="index.html${nav.href}" class="nav-link ${nav.id === 'projects' ? 'active' : ''}">${nav.text}</a></li>
+                    `).join('');
+                }
+            }
+
+            // Render footer
+            const footerContainer = document.getElementById('footer-content');
+            websiteData.renderFooter(footerContainer);
+
+            // Initialize mobile navigation
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+
+            if (mobileMenu && navLinks) {
+                mobileMenu.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

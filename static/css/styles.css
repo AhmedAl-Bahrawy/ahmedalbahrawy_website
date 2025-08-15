@@ -680,6 +680,37 @@ nav {
     line-height: 1.6;
     color: var(--text-light);
     opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.review-project {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.review-project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    background: transparent;
+    border: 1px solid var(--primary-blue);
+    color: var(--primary-blue);
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.review-project-link:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.review-project-link i {
+    font-size: 1rem;
 }
 
 .review-date {

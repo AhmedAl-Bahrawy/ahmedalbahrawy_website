@@ -4,6 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.querySelector('.next-btn');
     const projectTitleElem = document.getElementById('project-title');
 
+    // Fullscreen modal elements
+    const fullscreenModal = document.getElementById('fullscreen-modal');
+    const fullscreenImage = document.getElementById('fullscreen-image');
+    const fullscreenClose = document.getElementById('fullscreen-close');
+    const fullscreenPrev = document.getElementById('fullscreen-prev');
+    const fullscreenNext = document.getElementById('fullscreen-next');
+    const fullscreenCounter = document.getElementById('fullscreen-counter');
+
     let allProjectsData = {}; // To store data from projects.json
     let currentProject = null;
     let currentImageIndex = 0;
@@ -66,6 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (index === currentImageIndex) {
                 img.classList.add('active');
             }
+            
+            // Add click event for fullscreen
+            img.addEventListener('click', () => openFullscreen(index));
+            
             galleryImageWrapper.appendChild(img);
         });
 
@@ -116,6 +128,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Fullscreen functions
+    const openFullscreen = (imageIndex) => {
+        const projectInfo = allProjectsData[currentProject];
+        const images = projectInfo.images;
+        const imageFolder = projectInfo.image_folder;
+        
+        currentImageIndex = imageIndex;
+        fullscreenImage.src = imageFolder + images[imageIndex];
+        fullscreenImage.alt = `${projectInfo.name} image ${imageIndex + 1}`;
+        fullscreenCounter.textContent = `Image ${imageIndex + 1} of ${images.length}`;
+        
+        fullscreenModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        
+        
+        // Show/hide navigation buttons based on image count
+        if (images.length > 1) {
+            fullscreenPrev.style.display = 'block';
+            fullscreenNext.style.display = 'block';
+        } else {
+            fullscreenPrev.style.display = 'none';
+            fullscreenNext.style.display = 'none';
+        }
+    };
+
+    const closeFullscreen = () => {
+        fullscreenModal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    };
+
+    const showFullscreenImage = (index, direction) => {
+        const projectInfo = allProjectsData[currentProject];
+        const images = projectInfo.images;
+        
+        currentImageIndex = (index + images.length) % images.length;
+        const imageFolder = projectInfo.image_folder;
+        
+        fullscreenImage.src = imageFolder + images[currentImageIndex];
+        fullscreenImage.alt = `${projectInfo.name} image ${currentImageIndex + 1}`;
+        fullscreenCounter.textContent = `Image ${currentImageIndex + 1} of ${images.length}`;
+    };
+
     // Event listeners for navigation buttons
     prevBtn.addEventListener('click', () => {
         showImage(currentImageIndex - 1, 'prev');
@@ -123,6 +177,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     nextBtn.addEventListener('click', () => {
         showImage(currentImageIndex + 1, 'next');
+    });
+
+    // Fullscreen event listeners
+    fullscreenClose.addEventListener('click', closeFullscreen);
+    
+    fullscreenPrev.addEventListener('click', () => {
+        showFullscreenImage(currentImageIndex - 1, 'prev');
+    });
+    
+    fullscreenNext.addEventListener('click', () => {
+        showFullscreenImage(currentImageIndex + 1, 'next');
+    });
+
+    // Close modal when clicking outside the image
+    fullscreenModal.addEventListener('click', (e) => {
+        if (e.target === fullscreenModal) {
+            closeFullscreen();
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!fullscreenModal.classList.contains('active')) return;
+        
+        switch(e.key) {
+            case 'Escape':
+                closeFullscreen();
+                break;
+            case 'ArrowLeft':
+                showFullscreenImage(currentImageIndex - 1, 'prev');
+                break;
+            case 'ArrowRight':
+                showFullscreenImage(currentImageIndex + 1, 'next');
+                break;
+        }
     });
 
     // Initial data fetch

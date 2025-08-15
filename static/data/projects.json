@@ -1,13 +1,20 @@
 {
-    "confidential-client": {
-        "name": "Confidential Client Project",
-        "image_folder": "static/images/projects/confidential-client/",
+    "el-magicano-system": {
+        "name": "El-Magicano System - School Management Web Application",
+        "image_folder": "static/images/projects/El-Magicano-System/",
         "images": [
-            "appie-work-shop.png",
-            "centeral-resala.png",
-            "ettasel-nasel.jpg",
-            "kill-enemy-fps.jpg",
-            "shoot-gun.jpg"
+            "Desktop Screenshot 2025.08.15 - 16.29.38.41.png",
+            "Desktop Screenshot 2025.08.15 - 16.29.46.66.png",
+            "Desktop Screenshot 2025.08.15 - 16.30.21.36.png",
+            "Desktop Screenshot 2025.08.15 - 16.31.14.94.png",
+            "Desktop Screenshot 2025.08.15 - 16.31.54.85.png",
+            "Desktop Screenshot 2025.08.15 - 16.32.19.58.png",
+            "Desktop Screenshot 2025.08.15 - 16.32.49.17.png",
+            "Desktop Screenshot 2025.08.15 - 16.33.00.38.png",
+            "Desktop Screenshot 2025.08.15 - 16.33.38.06.png",
+            "Desktop Screenshot 2025.08.15 - 16.33.53.98.png",
+            "Desktop Screenshot 2025.08.15 - 16.34.33.43.png",
+            "Desktop Screenshot 2025.08.15 - 16.34.49.03.png"
         ]
     }
 }
