@@ -1,0 +1,11 @@
+/* Typing animation styles */
+.typing-text::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: var(--primary-blue);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

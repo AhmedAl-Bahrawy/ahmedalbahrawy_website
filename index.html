@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/typing.css">
 </head>
 <body>
     <!-- Animated Background -->
@@ -34,7 +35,7 @@
                 <img src="static/images/profile.jpg" alt="Ahmed Al-Bahrawy profile photo" class="profile-photo" loading="eager">
                 <i class="fas fa-bolt overlay-icon" aria-hidden="true"></i>
             </div>
-            <h1 id="hero-name"></h1>
+            <h1 id="hero-name" class="typing-text"></h1>
             <h2 id="hero-description"></h2>
             <p id="hero-tagline"></p>
             <div class="cta-buttons">
@@ -168,14 +169,41 @@
 
     <script>
         // Wait for website data to load
+        // Typing animation function with Promise
+        function typeText(element, text, speed = 100) {
+            return new Promise((resolve) => {
+                let i = 0;
+                element.textContent = '';
+                function type() {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        resolve();
+                    }
+                }
+                type();
+            });
+        }
+
         document.addEventListener('websiteDataLoaded', () => {
             // Update site information
             const siteInfo = websiteData.getSiteInfo();
+            const profileData = websiteData.getProfile();
+            const heroName = document.getElementById('hero-name');
+            
             if (siteInfo) {
                 document.title = siteInfo.title;
                 document.getElementById('logo').textContent = siteInfo.logo;
                 document.getElementById('hero-description').textContent = siteInfo.description;
                 document.getElementById('hero-tagline').textContent = siteInfo.tagline;
+            }
+
+            // Handle typing animation for hero name only
+            if (profileData && heroName) {
+                // Start typing animation with a small delay
+                setTimeout(() => typeText(heroName, profileData.name, 80), 300);
             }
 
             // Render navigation
@@ -379,14 +407,28 @@ I'd like to discuss potential collaboration opportunities.`;
             e.target.reset();
         });
 
-        // Add typing effect to hero text
-        const heroTitle = document.querySelector('.hero h1');
-        const originalText = websiteData.getProfile().name; // Get name directly from profile data
-        heroTitle.textContent = ''; // Clear initial text
+        // Add typing effect to hero text (robust: waits for website data and falls back to existing content)
+        const heroTitle = document.querySelector('.hero h1') || document.getElementById('hero-name');
 
+        function getHeroText() {
+            // Prefer profile name from the website data if available
+            try {
+                const profile = window.websiteData && typeof window.websiteData.getProfile === 'function'
+                    ? window.websiteData.getProfile()
+                    : null;
+                if (profile && profile.name) return profile.name;
+            } catch (e) {
+                // ignore
+            }
+            // Fallback to whatever is currently in the DOM
+            return (heroTitle && heroTitle.textContent) ? heroTitle.textContent.trim() : '';
+        }
+
+        // typing function returns a Promise for easier sequencing if needed
         function typeText(element, text, speed = 100) {
             return new Promise((resolve) => {
                 let i = 0;
+                element.textContent = '';
                 function type() {
                     if (i < text.length) {
                         element.textContent += text.charAt(i);
@@ -400,10 +442,13 @@ I'd like to discuss potential collaboration opportunities.`;
             });
         }
 
-        // Start typing effect after page load
-        window.addEventListener('load', async () => {
-            await new Promise(resolve => setTimeout(resolve, 1000)); // Initial delay
-            await typeText(heroTitle, originalText, 80);
+        // Start typing after website data is loaded (ensures profile name is available).
+        document.addEventListener('websiteDataLoaded', () => {
+            const text = getHeroText();
+            // short delay so other renderers finish
+            setTimeout(() => {
+                if (heroTitle && text) typeText(heroTitle, text, 80);
+            }, 200);
         });
 
         // Add particle effect for special sections
