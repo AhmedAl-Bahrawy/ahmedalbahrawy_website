@@ -34,9 +34,9 @@
                 <img src="static/images/profile.jpg" alt="Ahmed Al-Bahrawy profile photo" class="profile-photo" loading="eager">
                 <i class="fas fa-bolt overlay-icon" aria-hidden="true"></i>
             </div>
-            <h1 id="hero-name">Ahmed "Thunder" Al-Bahrawy</h1>
-            <h2 id="hero-description">Full-Stack Developer & Backend Specialist</h2>
-            <p id="hero-tagline">You may not always see Thunder... but it's the one you fear most.</p>
+            <h1 id="hero-name"></h1>
+            <h2 id="hero-description"></h2>
+            <p id="hero-tagline"></p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">
                     <i class="fas fa-code"></i>
@@ -381,26 +381,29 @@ I'd like to discuss potential collaboration opportunities.`;
 
         // Add typing effect to hero text
         const heroTitle = document.querySelector('.hero h1');
-        const originalText = heroTitle.textContent;
-        heroTitle.textContent = '';
+        const originalText = websiteData.getProfile().name; // Get name directly from profile data
+        heroTitle.textContent = ''; // Clear initial text
 
         function typeText(element, text, speed = 100) {
-            let i = 0;
-            function type() {
-                if (i < text.length) {
-                    element.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
+            return new Promise((resolve) => {
+                let i = 0;
+                function type() {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        resolve();
+                    }
                 }
-            }
-            type();
+                type();
+            });
         }
 
         // Start typing effect after page load
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                typeText(heroTitle, originalText, 80);
-            }, 1000);
+        window.addEventListener('load', async () => {
+            await new Promise(resolve => setTimeout(resolve, 1000)); // Initial delay
+            await typeText(heroTitle, originalText, 80);
         });
 
         // Add particle effect for special sections
