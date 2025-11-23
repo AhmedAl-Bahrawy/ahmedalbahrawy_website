@@ -278,15 +278,39 @@
                     "icon": "fas fa-eye"
                 }
             ]
+        },
+        {
+            "id": "molouk-alta7leel",
+            "name": "Molouk-Alta7leel",
+            "icon": "fas fa-book-reader",
+            "description": "A comprehensive Arabic learning platform featuring secure video lessons, exam system with results tracking, progress monitoring, and advanced admin tools. Built with secure video player technology to protect content while maintaining accessibility.",
+            "technologies": ["React", "Supabase", "TailwindCSS","AWS", "Video Streaming", "Secure Access", "Exam System", "Admin Panel"],
+            "links": [
+                {
+                    "type": "gallery",
+                    "url": "project-gallery.html?project=molouk-alta7leel",
+                    "text": "View Images",
+                    "icon": "fas fa-eye"
+                }
+            ]
         }
     ],
     "reviews": {
         "summary": {
             "rating": "5",
-            "totalReviews": "12+",
-            "text": "Based on 12+ client reviews"
+            "totalReviews": "13+",
+            "text": "Based on 13+ client reviews"
         },
         "items": [
+            {
+                "date": "Jan 2025",
+                "avatar": "G",
+                "name": "Mr. Gamal Essa",
+                "role": "Client",
+                "rating": 5,
+                "text": "⭐⭐⭐⭐⭐ Excellent platform — highly recommended!<br><br>Thank you for building this platform. It has made a real difference for my child's Arabic studies.<br><br>The video lessons are clear and well-organized, and the secure access system gives me confidence. The interface is clean and easy to use, and the progress tracking helps us see improvement.<br><br>The exam system and results tracking are valuable, and the admin tools show attention to detail. The secure video player ensures content is protected while remaining accessible.<br><br>This platform has become essential for our Arabic learning. Thank you for creating such a valuable resource.<br><br>— A grateful parent",
+                "projectId": "molouk-alta7leel"
+            },
             {
                 "date": "Jul 2025",
                 "avatar": "M",

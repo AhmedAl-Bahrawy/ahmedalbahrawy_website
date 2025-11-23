@@ -16,5 +16,23 @@
             "Desktop Screenshot 2025.08.15 - 16.34.33.43.png",
             "Desktop Screenshot 2025.08.15 - 16.34.49.03.png"
         ]
+    },
+    "molouk-alta7leel":{
+        "name": "Molouk-Alta7leel",
+        "image_folder": "static/images/projects/molouk-alta7leel/",
+        "images": [
+            "1.jpeg",
+            "2.jpeg",
+            "3.jpeg",
+            "4.jpeg",
+            "5.jpeg",
+            "6.jpeg",
+            "7.jpeg",
+            "8.jpeg",
+            "9.jpeg",
+            "10.jpeg",
+            "11.jpeg"
+
+        ]
     }
 }
